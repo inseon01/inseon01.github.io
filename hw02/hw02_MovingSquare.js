@@ -39,8 +39,8 @@ async function initShader() {
 function setupKeyboardEvents() {
     document.addEventListener('keydown', (event) => {
         const step = 0.01;
-        const maxX = 1.0-0.1;
-        const maxY = 1.0-0.1;
+        const maxX = 1.01-0.1;
+        const maxY = 1.01-0.1;
 
         if (event.key == 'ArrowUp' && moveY + step <= maxY) {
             moveY += step;
