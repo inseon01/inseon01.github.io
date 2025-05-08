@@ -1,23 +1,11 @@
 /*--------------------------------------------------------------------------------
-20_DirectionalLight.js
-
-- Viewing a 3D unit cylinder at origin with perspective projection
-- Rotating the cylinder by ArcBall interface (by left mouse button dragging)
-- Keyboard controls:
-    - 'a' to switch between camera and model rotation modes in ArcBall interface
-    - 'r' to reset arcball
-    - 's' to switch to smooth shading
-    - 'f' to switch to flat shading
-- Applying Texture mapping for computing diffuse reflection 
-- Lighting by directional light
-
 hw08_ToonShading
-- cylinder는 기존과 같음 /할 거 없음
-- directional light: (1.0, 0.25, 0.5)에서 원점 방향의 벡터 /끝
-- arcball mode 기존과 같음(a, r) /할 거 없음
-- shading mode는 항상 smooth shading, 토글 없애고 shading mode만 남기기! /끝
-- cameraPos는 (0,0,3) /할거없음
-- textOverlay는 두번째, 세번째 줄만 mode에 따라 업데이트 /끝
+- cylinder는 기존과 같음
+- directional light: (1.0, 0.25, 0.5)에서 원점 방향의 벡터
+- arcball mode 기존과 같음(a, r)
+- shading mode는 항상 smooth shading, 토글 없애고 shading mode만 남기기!
+- cameraPos는 (0,0,3)
+- textOverlay는 두번째, 세번째 줄만 mode에 따라 업데이트
 - toon shading을 위해 양자화(quantizaion) 해야 함. fragment shader의 diff와 spec에 적용
 ----------------------------------------------------------------------------------*/
 import { resizeAspectRatio, setupText, updateText, Axes } from '../util/util.js';
@@ -36,7 +24,7 @@ let viewMatrix = mat4.create();
 let projMatrix = mat4.create();
 let modelMatrix = mat4.create();
 let arcBallMode = 'CAMERA';     // 'CAMERA' or 'MODEL'
-let toonLevels = 5;
+let toonLevels = 3;
 
 const cylinder = new Cylinder(gl, 32);
 const axes = new Axes(gl, 1.5); // create an Axes object with the length of axis 1.5
